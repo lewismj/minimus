@@ -18,5 +18,4 @@ import org.scalacheck.Gen
   */
 trait  HelloSuite extends AnyFunSuite
   with BeforeAndAfterAll
-  with Checkers
   with Matchers {}

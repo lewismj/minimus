@@ -85,3 +85,4 @@ crashlytics-build.properties
 
 #sbtops for mac
 .sbtopts
+.bsp
