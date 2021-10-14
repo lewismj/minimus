@@ -14,17 +14,11 @@ lazy val commonScalacOptions = Seq(
 lazy val buildSettings = Seq(
   name := "minimus",
   Global / organization := "com.waioeka",
-  Global / scalaVersion := "3.0.0"
+  Global / scalaVersion := "3.0.2"
 )
 
 lazy val noPublishSettings = Seq(
     publish / skip := true
-)
-
-lazy val scoverageSettings = Seq(
-  coverageMinimumStmtTotal := 75,
-  coverageFailOnMinimum := false,
-  coverageExcludedPackages := "instances"
 )
 
 lazy val commonSettings = Seq(
@@ -38,7 +32,7 @@ lazy val publishSettings = Seq(
   publishMavenStyle := true,
   Test / publishArtifact := false,
   pomIncludeRepository := Function.const(false),
-  sonatypeProfileName := "com.com.waioeka",
+  sonatypeProfileName := "com.waioeka",
   publishTo := Some(
     if (isSnapshot.value) Opts.resolver.sonatypeSnapshots
     else Opts.resolver.sonatypeStaging
@@ -57,7 +51,7 @@ lazy val publishSettings = Seq(
 )
 
 
-lazy val minimusSettings = buildSettings ++ commonSettings ++ scoverageSettings
+lazy val minimusSettings = buildSettings ++ commonSettings 
 
 lazy val minimus = project.in(file("."))
   .settings(moduleName := "root")
@@ -89,7 +83,8 @@ lazy val docSettings = Seq(
     "gray-light" -> "#E5E5E6",
     "gray-lighter" -> "#F4F3F4",
     "white-color" -> "#FFFFFF"),
-  git.remoteRepo := "git@github.com:lewismj/minimus.git",
+  //git.remoteRepo := "git@github.com:lewismj/minimus.git",
+  git.remoteRepo := "https://github.com/lewismj/minimus.git",
   ghpagesNoJekyll := false,
   ScalaUnidoc /unidoc / unidocProjectFilter := inAnyProject -- inProjects(tests),
   docsMappingsAPIDir := "api",
@@ -126,7 +121,7 @@ lazy val tests = project.in(file("tests"))
     coverageEnabled := false,
     Test / testOptions += Tests.Argument(TestFrameworks.ScalaTest, "-oDF"),
     libraryDependencies ++= Seq(
-      "org.scalatest"  %% "scalatest" % "3.2.9" % "test",
+      "org.scalatest"  %% "scalatest" % "3.2.10" % "test",
       "org.scalacheck" %% "scalacheck" % "1.15.4" % "test"
     )
   )
