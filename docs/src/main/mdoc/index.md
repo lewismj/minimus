@@ -1,9 +1,9 @@
-+---
-+layout: home
-+title: Home
-+secion: home
-+position: 1
-+---
-+
-+ minimus
+---
+layout: home
+title: "Home"
+section: "home"
+---
+
+minimus
 # Placeholder
+This is a placeholder.
