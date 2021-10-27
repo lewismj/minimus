@@ -1,0 +1,19 @@
+options:
+
+  ### Data Structures ###
+
+  - title: Data Structures
+    url: datastructures.html
+    menu_type: datastructures
+
+   ### Algorithms ###
+
+  - title: Algorithms
+    url: algorithms.html
+    menu_type: algorithms
+
+   ### Type Classes ###
+
+  - title: Type Classes
+    url: typeclasses.html
+    menu_type: typeclasses
